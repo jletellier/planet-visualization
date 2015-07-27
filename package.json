@@ -1,0 +1,19 @@
+{
+    "name": "planet-visualization",
+    "version": "0.1.0",
+    "description": "JavaScript library to visualise planets (with an emphasis on the Earth)",
+    "license": "MIT",
+    "author": {
+        "name": "Julien Letellier",
+        "email": "letellier.julien@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jletellier/planet-visualization.git"
+    },
+    "dependencies": {
+        "lodash": "3.10.0"
+    },
+    "main": "index",
+    "engine": "node 0.12.x"
+}
