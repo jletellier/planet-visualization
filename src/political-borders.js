@@ -26,6 +26,12 @@ function drawFeature(ctx, feature, fill, stroke) {
     }
 }
 
+function drawFeatures(ctx, features, fill, stroke) {
+    for (var i = 0; i < features.length; i++) {
+        drawFeature(ctx, features[i], fill, stroke);
+    }
+}
+
 function drawCanvas2DPath(ctx, geometryCoord, fill, stroke) {
     createCanvas2DPath(ctx, geometryCoord);
 
@@ -59,5 +65,6 @@ function createCanvas2DPath(ctx, geometryCoord) {
 
 module.exports = {
     getFeaturesByContinent: getFeaturesByContinent,
-    drawFeature: drawFeature
+    drawFeature: drawFeature,
+    drawFeatures: drawFeatures
 };
