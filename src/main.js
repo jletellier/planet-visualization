@@ -1,10 +1,11 @@
-var _ = {
-    extend: require('lodash/object/extend')
-};
+'use strict';
+
+var assign = require('lodash/object/extend');
 
 var helper = require('./helper');
 var politicalBorders = require('./political-borders');
+var heatmap = require('./heatmap');
 
-var planet = _.extend({}, helper, politicalBorders);
+var planet = assign({}, helper, politicalBorders, heatmap);
 
 module.exports = planet;
