@@ -3,9 +3,25 @@
 function rad2degr(rad) { return rad * 180 / Math.PI; }
 function degr2rad(degr) { return degr * Math.PI / 180; }
 
+var clamp = function(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+};
+
 function lonLatToTexCoord(longitude, latitude) {
     var x = (longitude + 180) / 360;
     var y = (90 - latitude) / 180;
+
+    return { x: x, y: y };
+}
+
+function lonLatToTexCoordWebMercator(longitude, latitude) {
+    longitude = clamp(longitude, -180, 180);
+    latitude = clamp(latitude, -85, 85);
+
+    var x = (longitude + 180) / 360;
+
+    var a = Math.log(Math.tan((90 + latitude) * Math.PI / 360)) / (Math.PI / 180);
+    var y = (180 - a) / 360;
 
     return { x: x, y: y };
 }
@@ -89,6 +105,7 @@ function createContext2D(width, height, insertDom) {
 
 module.exports = {
     lonLatToTexCoord: lonLatToTexCoord,
+    lonLatToTexCoordWebMercator: lonLatToTexCoordWebMercator,
     lonLatToWorldCoord: lonLatToWorldCoord,
     worldCoordToLonLat: worldCoordToLonLat,
     getLonLatCenter: getLonLatCenter,

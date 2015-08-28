@@ -47,7 +47,7 @@ function createCanvas2DPath(ctx, geometryCoord) {
             var lon = geometryCoord[iOuter][iInner][0];
             var lat = geometryCoord[iOuter][iInner][1];
 
-            var texCoord = helper.lonLatToTexCoord(lon, lat);
+            var texCoord = helper.lonLatToTexCoordWebMercator(lon, lat);
             var x = texCoord.x * ctx.canvas.width;
             var y = texCoord.y * ctx.canvas.height;
 

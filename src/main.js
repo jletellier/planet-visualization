@@ -1,6 +1,6 @@
 'use strict';
 
-var assign = require('lodash/object/extend');
+var assign = require('lodash/object/assign');
 
 var helper = require('./helper');
 var politicalBorders = require('./political-borders');

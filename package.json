@@ -1,7 +1,7 @@
 {
     "name": "planet-visualization",
     "version": "0.1.0",
-    "description": "JavaScript library to visualise planets (with an emphasis on the Earth)",
+    "description": "JavaScript library to visualize planets (with an emphasis on the Earth)",
     "license": "MIT",
     "author": {
         "name": "Julien Letellier",
